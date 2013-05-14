@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Left Sidebar Page
+Template Name: Left Sidebar Page 2
 */
 ?>
 
@@ -10,7 +10,7 @@ Template Name: Left Sidebar Page
             
             	<?php get_sidebar(); // sidebar 1 ?>
 			
-				<div id="main" class="span8 clearfix" role="main">
+				<div id="main" class="span10 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

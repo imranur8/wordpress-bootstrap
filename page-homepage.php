@@ -3,136 +3,262 @@
 Template Name: Homepage
 */
 ?>
+        <style>
+            .pcon {
+                background-color: lightblue;
+                height: 200px;
+            }
 
+            .pcon.higher {
+                background-color: green;
+                height: 400px;
+            }
+
+            .pcon.smaller {
+                background-color: red;
+                height: 80px;
+            }
+
+            .ajax {
+                background-color: pink;
+            }
+        </style>
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row-fluid">
+			<div id="" class="	 row-fluid">
 			
 				<div id="main" class="span12 clearfix" role="main">
+					 <div style="position:relative" id="categoryProductContainer">
+            <div class="span2 pcon smaller prodcont actioninside new" >
 
-					<?php
+                1
 
-					$use_carousel = of_get_option('showhidden_slideroptions');
-      				if ($use_carousel) {
+            </div>
 
-					?>
 
-					<div id="myCarousel" class="carousel">
+            <div class="span2 pcon prodcont actioninside new" >
 
-					    <!-- Carousel items -->
-					    <div class="carousel-inner">
+                2
 
-					    	<?php
-							global $post;
-							$tmp_post = $post;
-							$show_posts = of_get_option('slider_options');
-							$args = array( 'numberposts' => $show_posts ); // set this to how many posts you want in the carousel
-							$myposts = get_posts( $args );
-							$post_num = 0;
-							foreach( $myposts as $post ) :	setup_postdata($post);
-								$post_num++;
-								$post_thumbnail_id = get_post_thumbnail_id();
-								$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'wpbs-featured-carousel' );
-							?>
+            </div>
 
-						    <div class="<?php if($post_num == 1){ echo 'active'; } ?> item">
-						    	<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'wpbs-featured-carousel' ); ?></a>
+            <div class="span2 pcon higher prodcont actioninside new" >
 
-							   	<div class="carousel-caption">
+                3
 
-					                <h4><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
-					                <p>
-					                	<?php
-					                		$excerpt_length = 100; // length of excerpt to show (in characters)
-					                		$the_excerpt = get_the_excerpt(); 
-					                		if($the_excerpt != ""){
-					                			$the_excerpt = substr( $the_excerpt, 0, $excerpt_length );
-					                			echo $the_excerpt . '... ';
-					                	?>
-					                	<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="btn btn-primary">Read more &rsaquo;</a>
-					                	<?php } ?>
-					                </p>
+            </div>
 
-				                </div>
-						    </div>
+            <div class="span2 pcon prodcont actioninside new" >
 
-						    <?php endforeach; ?>
-							<?php $post = $tmp_post; ?>
+                4
 
-					    </div>
+            </div>
 
-					    <!-- Carousel nav -->
-					    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-					    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-				    </div>
 
-				    <?php } // ends the if use carousel statement ?>
+            <div class="span2 pcon prodcont actioninside new" >
 
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-					
-						<header>
+                5
 
-							<?php 
-								$post_thumbnail_id = get_post_thumbnail_id();
-								$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'wpbs-featured-home' ); 
-								// not sure why this isn't working yet
-							?>
-						
-							<div class="hero-unit" style="background-image: url('<?php echo $featured_src; ?>'); background-repeat: no-repeat; background-position: 0 0;">
+            </div>
 
-								<?php the_post_thumbnail( 'wpbs-featured-home' ); ?>
 
-								<h1><?php the_title(); ?></h1>
-								
-								<?php echo get_post_meta($post->ID, 'custom_tagline' , true);?>
-							
-							</div>
+            <div class="span2 pcon prodcont actioninside new" >
 
-						</header>
-						
-						<section class="row-fluid post_content">
-						
-							<div class="span8">
-						
-								<?php the_content(); ?>
-								
-							</div>
-							
-							<?php get_sidebar('sidebar2'); // sidebar 2 ?>
-													
-						</section> <!-- end article header -->
-						
-						<footer>
-			
-							<p class="clearfix"><?php the_tags('<span class="tags">' . __("Tags","bonestheme") . ': ', ', ', '</span>'); ?></p>
-							
-						</footer> <!-- end article footer -->
-					
-					</article> <!-- end article -->
-					
-					<?php 
-						// No comments on homepage
-						//comments_template();
-					?>
-					
-					<?php endwhile; ?>	
-					
-					<?php else : ?>
-					
-					<article id="post-not-found">
-					    <header>
-					    	<h1><?php _e("Not Found", "bonestheme"); ?></h1>
-					    </header>
-					    <section class="post_content">
-					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "bonestheme"); ?></p>
-					    </section>
-					    <footer>
-					    </footer>
-					</article>
-					
-					<?php endif; ?>
+                6
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                7
+
+            </div>
+
+
+            <div class="span2 pcon higher prodcont actioninside new" >
+
+                8
+
+            </div>
+
+            <div class="span2 pcon  prodcont actioninside new" >
+
+                9
+
+            </div>
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                10
+
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new">
+
+                11
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                12
+
+            </div>
+            <div class="span2 pcon prodcont actioninside new" >
+
+                13
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+                14  
+
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                15
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+                16
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+                17
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                18
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                19
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                20
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new">
+
+                21
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                22
+
+            </div>
+
+        </div>
+
+
+        <div style="display:none" id="ajax" >
+            <div class="span2 pcon prodcont actioninside new">
+
+                11
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                12
+
+            </div>
+            <div class="span2 pcon prodcont actioninside new" >
+
+                13
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+                14  
+
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                15
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+                16
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+                17
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                18
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                19
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                20
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new">
+
+                21
+
+            </div>
+
+
+            <div class="span2 pcon prodcont actioninside new" >
+
+                22
+
+            </div>
+        </div>
+
 			
 				</div> <!-- end #main -->
     

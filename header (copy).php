@@ -88,7 +88,7 @@
 	</head>
 	
 	<body <?php body_class(); ?>>
-		<?php /*		
+				
 		<header role="banner">
 		
 			<div id="inner-header" class="clearfix">
@@ -124,6 +124,5 @@
 			</div> <!-- end #inner-header -->
 		
 		</header> <!-- end header -->
-	*/ ?>
 		
 		<div class="container-fluid">

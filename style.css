@@ -515,7 +515,7 @@ blockquote.pull-left{
 	}
 	
 	.container-fluid{
-		max-width: 970px;
+		/*max-width: 970px;*/
 		margin: 0 auto;
 		padding-left: 20px;
 		padding-right: 20px;
